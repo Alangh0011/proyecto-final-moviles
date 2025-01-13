@@ -1,0 +1,61 @@
+name: proyecto_final_moviles
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+    
+  path: any
+  firebase_core: ^3.8.0
+  cloud_firestore: ^5.5.0
+  firebase_auth: ^5.3.3
+  flutter_launcher_icons: ^0.14.2
+    
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_map: ^7.0.2
+  # webview_flutter: ^4.10.0
+  latlong2: ^0.9.1
+  
+
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "lib/src/assets/images/cienciadatos.png"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - lib/src/assets/images/ia.png
+    - lib/src/assets/images/isc.png
+    - lib/src/assets/images/lcd.png
+    - lib/src/assets/images/mccd.png
+    - lib/src/assets/images/mciia.png
+    - lib/src/assets/images/mcsm.png
+    - lib/src/assets/images/horarioisc.png
+    - lib/src/assets/images/horarioisc2009.png
+    - lib/src/assets/images/horarioia.png
+    - lib/src/assets/images/horariolcd.png
+    - lib/src/assets/images/logoescom.png
+    - lib/src/assets/images/facebook.png
+    - lib/src/assets/images/twitter.png
+    - lib/src/assets/images/web.png
+    - lib/src/assets/images/atributos.png
+    - lib/src/assets/images/perfilingreso.png
+    - lib/src/assets/images/perfilegreso.png
+    - lib/src/assets/images/titulacion.png
+    - lib/src/assets/images/laboral.png
+    - lib/src/assets/images/horario.png
+    - lib/src/assets/images/profesor.png
+    - lib/src/assets/images/cienciadatos.png
+    - lib/src/assets/images/aplicaciones.png
+    - lib/src/assets/images/cerebro.png
