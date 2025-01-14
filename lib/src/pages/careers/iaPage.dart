@@ -9,6 +9,7 @@ class iaPage extends StatefulWidget {
   _PlanIAContentState createState() => _PlanIAContentState();
 } 
 
+//StatefulWidget -> Si hay estados y el estado asociado es _PlanIAContentState
 class _PlanIAContentState extends State<iaPage> {
   final String _imageAssetPath = 'lib/src/assets/images/horarioia.png';
 
@@ -162,6 +163,7 @@ class _PlanIAContentState extends State<iaPage> {
     );
   }
 
+  //Muestra un cuadro de diálogo con el título y contenido de la sección seleccionada
   void _showDialog(BuildContext context, String title, String content) {
     showDialog(
       context: context,
@@ -193,3 +195,33 @@ class _PlanIAContentState extends State<iaPage> {
     );
   }
 }
+
+
+
+/**
+ * Semejanza con React
+ * En React, esta página podría implementarse con componentes y un map para generar los botones dinámicamente:
+ * 
+ * 
+ * 
+  const sections = [
+  { title: "Perfil de ingreso", content: "...", image: "perfilingreso.png" },
+  { title: "Perfil de egreso", content: "...", image: "perfilegreso.png" },
+];
+
+return (
+  <div>
+    <h1>Ingeniería en Inteligencia Artificial</h1>
+    <p>Objetivo: Formar expertos...</p>
+    <div className="grid">
+      {sections.map((section, index) => (
+        <button key={index} onClick={() => showDialog(section.title, section.content)}>
+          <img src={section.image} alt={section.title} />
+          <span>{section.title}</span>
+        </button>
+      ))}
+    </div>
+  </div>
+);
+
+ */

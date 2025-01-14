@@ -97,6 +97,7 @@ class _RegistroUsuarioScreenState extends State<RegistroUsuarioScreen> {
     );
   }
 
+  //Define un estilo reutilizable para los campos de texto.
   InputDecoration _inputDecoration(String labelText, String hintText) {
     return InputDecoration(
       labelText: labelText,
@@ -125,6 +126,7 @@ class _RegistroUsuarioScreenState extends State<RegistroUsuarioScreen> {
     );
   }
 
+  //Interfaz de Usuario (Método build)
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -247,7 +249,7 @@ class _RegistroUsuarioScreenState extends State<RegistroUsuarioScreen> {
                 ),
                 const SizedBox(height: 10,),
                 const Text("-o-", style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500, color: Colors.grey),),
-                 GestureDetector(
+                GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, '/registrarprofesor');
               },

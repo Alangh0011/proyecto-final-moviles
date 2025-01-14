@@ -17,9 +17,9 @@ class _RegisterProfesorPageState extends State<RegisterProfesorPage> {
   final _telefonoController = TextEditingController();
   final _correoController = TextEditingController();
   final _contrasenaController = TextEditingController();
-  String? _selectedAcademia;
-  List<DropdownMenuItem<String>> _academias = [];
-  bool _loadingAcademias = true;
+  String? _selectedAcademia; //Almacena la academia seleccionada por el profesor.
+  List<DropdownMenuItem<String>> _academias = []; //Manejan la lista de academias obtenidas de Firestore y el estado de carga.
+  bool _loadingAcademias = true; //Manejan la lista de academias obtenidas de Firestore y el estado de carga.
 
   @override
   void initState() {
@@ -103,6 +103,7 @@ class _RegisterProfesorPageState extends State<RegisterProfesorPage> {
     );
   }
 
+  //Cargar academias desde Firestore
   Future<void> _fetchAcademias() async {
     try {
       final QuerySnapshot snapshot =
@@ -167,6 +168,8 @@ class _RegisterProfesorPageState extends State<RegisterProfesorPage> {
     }
   }
 
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -218,6 +221,8 @@ class _RegisterProfesorPageState extends State<RegisterProfesorPage> {
                 const Text("Academia",
                     style: TextStyle(fontWeight: FontWeight.w600)),
                 const SizedBox(height: 8),
+                /*Si las academias están cargando, muestra un indicador de carga.
+                Si ya están disponibles, muestra un desplegable para seleccionar una academia. */
                 _loadingAcademias
                     ? const CircularProgressIndicator()
                     : DropdownButtonFormField<String>(
@@ -308,3 +313,19 @@ class _RegisterProfesorPageState extends State<RegisterProfesorPage> {
     );
   }
 }
+
+/*Semejanza con React;
+
+En React, usarías formularios controlados y un hook para manejar la carga inicial de academias
+
+ const [academias, setAcademias] = useState([]);
+useEffect(() => {
+  const fetchAcademias = async () => {
+    const snapshot = await firestore.collection("academias").get();
+    setAcademias(snapshot.docs.map(doc => doc.data()));
+  };
+  fetchAcademias();
+}, []);
+
+
+*/

@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 class IscPage extends StatelessWidget {
   const IscPage({super.key});
 
+
+  ///Se define length: 2 porque hay dos pestañas: Plan 2020 y Plan 2009.
+  ///TabBar; Barra superior que permite cambiar entre los planes académicos.
+  ///TabBarView; Contiene los widgets Plan2020Content y Plan2009Content.
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -59,6 +63,7 @@ class Plan2020Content extends StatefulWidget {
   _Plan2020ContentState createState() => _Plan2020ContentState();
 }
 
+//Esta clase muestra la información del Plan 2020 para ISC.
 class _Plan2020ContentState extends State<Plan2020Content> {
   final String _imageAssetPath = 'lib/src/assets/images/horarioisc.png';
 
@@ -95,6 +100,8 @@ class _Plan2020ContentState extends State<Plan2020Content> {
     },
   ];
 
+
+  //SingleChildScrollView; Permite desplazarse si el contenido supera la altura de la pantalla.
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
